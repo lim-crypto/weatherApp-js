@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="WeatherApp , weatherApi">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Jerald Lim">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <title>WeatherApp</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://kit.fontawesome.com/d3f7c8fad1.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+      /* text-shadow: 1px 1px 2px white, 0 0 0px white, 0 0 5px white; */
+      /* text-shadow: 0px 0px 1px  white,0px 0px 1px  white; */
+    }
+    body,
+    html {
+      height: 100%;
+    }
+    .parallax {
+      height: 100%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    #icon {
+      float: left;
+      width: 75px;
+    }
+    #temperature {
+      font-size: 65px;
+    }
+    #myloc {
+      cursor: pointer;
+    }
+
+    #editloc {
+      font-size: 15px;
+      cursor: pointer;
+
+    }
+
+    input {
+      border: none;
+      background-color: transparent;
+      font-size: 30px;
+    }
+
+    #form {
+      font-size: 30px;
+    }
+
+    #details {
+   padding: 100px;
+    }
+
+    ul {
+      list-style: none;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      #details {
+        padding: 50px;
+
+      }
+
+      #icon {
+        width: 50px;
+      }
+
+      #temperature {
+        font-size: 50px;
+      }
+
+      input {
+        border: none;
+        background-color: transparent;
+        font-size: 25px;
+      }
+
+      #form {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parallax " id="bg">
+
+    <div id="details">
+      <form id="form">
+        <i id="myloc" class="fas fa-map-marker-alt"></i>
+
+        <label for="city" ></label>
+        <input type="text" id="city" class="form-control" size="10" autofocus placeholder="City" > 
+        <label for="country"></label>
+        <input type="text" id="country" class="form-control" size="1">
+
+        <!-- <input type="submit"> -->
+        <button type="submit" hidden><i class="fas fa-edit" id="editloc"></i></button>
+      </form>
+      <!-- <h1 id="location"></h1> -->
+      <p id="desc"></p>
+      <img id="icon">
+      <h1 id="temperature"></h1>
+      <ul>
+        <li id="feels-like"></li>
+        <li id="humidity"></li>
+        <li id="visibility"></li>
+        <li id="wind"></li>
+      </ul>
+    </div>
+<div id="time"></div>
+  </div>
+  <script src="storage.js"></script>
+  <script src="locationApi.js"></script>
+  <script src="weatherApi.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
